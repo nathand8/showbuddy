@@ -1,9 +1,29 @@
-<h1>Show Buddy</h1>
+<html> 
+    <head> 
+        <script src="/libs/jquery.min.js"></script> 
+        <script> 
+            $(function(){
+                $("#header").load("/common/header.html"); 
+                $("#footer").load("/common/footer.html"); 
+            });
+        </script> 
+        <script src="/libs/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/libs/bootstrap.min.css" />
+    </head> 
 
-<a href="/userDetails">User Details</a>
-<a href="/settings">Settings</a>
-<a href="/search">Search</a>
-<a href="/messages">Messages</a>
-<a href="/login">Login</a>
-<a href="/eventDetails">Event Details</a>
-<a href="/calendar">Calendar</a>
+    <body> 
+        <div id="header"></div>
+        <!-- HEADER. PUT YOUR CONTENT BELOW -->
+
+        <a href="/userDetails">User Details</a><br /><br />
+        <a href="/settings">Settings</a><br /><br />
+        <a href="/search">Search</a><br /><br />
+        <a href="/messages">Messages</a><br /><br />
+        <a href="/login">Login</a><br /><br />
+        <a href="/eventDetails">Event Details</a><br /><br />
+        <a href="/calendar">Calendar</a><br /><br />
+
+        <!-- FOOTER. PUT YOUR CONTENT ABOVE -->
+        <div id="footer"></div>
+    </body> 
+</html>
