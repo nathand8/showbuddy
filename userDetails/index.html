@@ -16,7 +16,59 @@
     <body> 
         <div id="header"></div>
         <!-- HEADER. PUT YOUR CONTENT BELOW -->
-
+	<div id="content"></div>
+		<h3 class="sectionTitle">Account Preferences</h3>
+		<div id="accountPreferences" class="expandable">
+			<p class="questionLabel">Email me when:</p>
+			<input type="checkbox" name="matchEmail" value="matchEmail">I match with somebody</input>
+			<br>
+			<input type="checkbox" name="messageEmail" value="messageEmail">Someone sends me a message</input>
+			<br>
+			<input type="checkbox" name="suggestionEmail" value="suggestionEmail">A new event is posted that matches my preferences</input>
+		</div>
+		<h3 class="sectionTitle">Personal Profile</h3>
+		<div id="personalProfile" class="expandable">
+			<input type="text" id="displayName" class="textInput" placeholder="Display Name"></input>
+			<br>
+			<label for="age" id="ageLabel" class="inputLabel">Age</label>
+			<input type="number" id="age" class="otherInput" min=1 max=120 value=18></input>
+			<br>
+			<label for="gender" id="genderLabel" class="inputLabel">Gender</label>
+			<select id="gender" class="otherinput">
+				<option value="female">Female</option>
+				<option value="male">Male</option>
+				<option value="other">Other</option>
+			</select>
+			<div id="photo"></div>
+			<input type="file" name="uploadFile" id="uploadFile"></input>
+			<input type="submit" value="Upload Photo" name="uploadPhoto"></input>
+		</div>
+		<h3 class="sectionTitle">Event Preferences</h3>
+		<div id="eventPreferences" class="expandable">
+			<h5>Preferred Genres</h5>
+			<div id="genres"></div>
+			<input type="text" id="addGenre" class="textInput" placeholder="Add Genre"></input>
+			<input type="submit" value="+" name="addGenre"></input>
+		</div>
+		<h3 class="sectionTitle">Buddy Preferences</h3>
+		<div id="buddyPreferences" class="expandable">
+			<p class="questionLabel">Age Range</p>
+			<input type="number" id="minAge" class="otherInput" min=1 max=120 value=18></input>
+			<p>to</p>
+			<input type="number" id="maxAge" class="otherInput" min=1 max=120 value=24></input>
+			<p class="questionLabel">Gender</p>
+			<select id="buddyGender" class="otherinput">
+				<option value="any">Any</option>
+				<option value="female">Female</option>
+				<option value="male">Male</option>
+				<option value="other">Other</option>
+			</select>
+			<br>
+			<input type="checkbox" name="individuals" value="Individuals">Individuals</input>
+			<br>
+			<input type="checkbox" name="groups" value="Groups">Groups</input>
+		</div>
+	</div>
 
         <!-- FOOTER. PUT YOUR CONTENT ABOVE -->
         <div id="footer"></div>
