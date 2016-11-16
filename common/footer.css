@@ -22,4 +22,9 @@
 .footer .quarter-screen-footer a {
     color: inherit;
     cursor: pointer;
+    padding: 5px 15px;
+}
+
+.footer .quarter-screen-footer:hover, .footer .quarter-screen-footer:focus {
+    background-color: #e2e1e1;
 }
