@@ -1,17 +1,17 @@
-nav img {
+.header .navbar-logo img {
     width: 47px;
 }
 
-.navbar-header {
+.header .navbar-header {
     border-bottom: 2px solid yellow;
 }
 
-.navbar-header .navbar-text {
+.header .navbar-header .navbar-text {
     text-align: center;
     font-weight: bold;
 }
 
-.navbar-logo {
+.header .navbar-logo {
     position: absolute;
     float: left;
     padding-top: 12px;

@@ -1,0 +1,25 @@
+.footer .navbar-header {
+    border-top: 2px solid yellow;
+}
+
+.footer .quarter-screen-footer {
+    display: block;
+    float: left;
+    width: 25%;
+    height: 47px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.footer .quarter-screen-footer.not-first {
+    border-left: 1px solid silver;
+}
+
+.footer .quarter-screen-footer .glyphicon {
+    margin-top: 11px;
+}
+
+.footer .quarter-screen-footer a {
+    color: inherit;
+    cursor: pointer;
+}
