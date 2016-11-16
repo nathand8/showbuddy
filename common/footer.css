@@ -25,6 +25,10 @@
     padding: 5px 15px;
 }
 
-.footer .quarter-screen-footer:hover, .footer .quarter-screen-footer:focus {
+.footer .quarter-screen-footer:hover, .footer .quarter-screen-footer:focus, .footer .quarter-screen-footer:active {
+    background-color: #e2e1e1;
+}
+
+.footer .quarter-screen-footer.active {
     background-color: #e2e1e1;
 }
