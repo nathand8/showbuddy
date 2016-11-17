@@ -40,7 +40,6 @@
 			<textarea id="bio" class="textareaInput"></textarea>
 			<div id="photo"></div>
 			<input type="file" name="uploadFile" id="uploadFile"></input>
-			<input type="submit" value="Upload Photo" name="uploadPhoto"></input>
 		</div>
 		<div id="eventPreferencesTitle" class="sectionTitleBox">
 			<h3 class="sectionTitle">Event Preferences</h3>
@@ -67,10 +66,11 @@
 				<option value="other">Other</option>
 			</select>
 			<br>
-			<input type="checkbox" name="individuals" value="Individuals">Individuals</input>
+			<input type="checkbox" id="individuals" name="individuals" value="Individuals">Individuals</input>
 			<br>
-			<input type="checkbox" name="groups" value="Groups">Groups</input>
+			<input type="checkbox" id="groups" name="groups" value="Groups">Groups</input>
 		</div>
+		<input type="submit" value="Save" name="saveSettings" id="saveSettings"></input>
         <!-- FOOTER. PUT YOUR CONTENT ABOVE -->
         </div>
         <div id="footer"></div>
