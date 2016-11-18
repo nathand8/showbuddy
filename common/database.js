@@ -20,8 +20,18 @@ function dao_getUserByUsername(uname, cb) {
     var db = firebase.database();
     var users = db.ref("users/");
     users.orderByChild('username').startAt(uname).limitToFirst(1).once('value', function(data) {
-        var userobj = data.val()[Object.getOwnPropertyNames(data.val())[0]];
-        cb(userobj);
+        var dv = data.val(); 
+        if (dv == undefined) {
+            cb(undefined);
+        }
+        else {
+            var userobj = dv[Object.getOwnPropertyNames(dv)[0]];
+            if (userobj == undefined) {
+                cb(undefined);
+            } else {
+                cb(userobj);
+            }
+        }
     });
 }
 
@@ -30,9 +40,29 @@ function dao_getTestUser(cb) {
 }
 
 function dao_setUserByUsername(uname, uobject, cb) {
-    // TODO: update object with username == uname as uobject
-    // else if no object exists, create object
-    // this is an UPSERT
+    var db = firebase.database();
+    var users = db.ref("users/");
+    users.push(uobject);
+}
+
+// returns boolean : username is available
+function dao_checkUsernameAvailable(uname, cb) {
+    dao_getUserByUsername(uname, function(uobj) {
+        cb(uobj == undefined);
+    });
+}
+
+// returns undefined for a failed login
+function dao_getUserWithLogin(uname, upass, cb) {
+    dao_getUserByUsername(uname, function(uobj) {
+        if (uobj==undefined) {
+            cb(undefined);
+        } else if (uobj.password == upass) {
+            cb(uobj);
+        } else {
+            cb(undefined);
+        }
+    });
 }
 
 /*
