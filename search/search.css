@@ -10,3 +10,7 @@ div.search-page #search-input {
 div.search-page h4 {
     margin-left: 10px;
 }
+
+div.event-card-list {
+    margin: 10px;
+}
