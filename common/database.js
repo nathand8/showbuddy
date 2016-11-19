@@ -65,6 +65,24 @@ function dao_getUserWithLogin(uname, upass, cb) {
     });
 }
 
+function dao_addMessageThreadToUser(user, messageId) {
+    console.log(firebase.database().ref("users/").child(user).toString());
+    firebase.database().ref("users/").child(user).transaction(function(currData) {
+        console.log(currData);
+        if (currData != undefined) {
+            console.log(currData);
+            if (currData.messages.indexOf(messageId) > -1) {
+                currData.messages.push(messageId);
+            }
+            return currData;
+        }
+    }, function (e, c, s) {
+        console.log(e);
+        console.log(c);
+        console.log(s.val());
+    });
+}
+
 /*
  * Events
  */
@@ -82,6 +100,75 @@ function dao_getTestEvent(cb) {
     dao_getEventById('TheTestEvent', cb);
 }
 
-function setEventByID(eid, eobject) {
+function dao_setEventByID(eid, eobject) {
     // TODO: UPSERT event by eid
+}
+
+/*
+ * Messages
+ */
+ 
+function dao_getMessagesByParticipants(usera, userb, cb) {
+    var db = firebase.database();
+    var messages = db.ref("messages/");
+    var mId = "";
+    if (usera.localeCompare(userb) > 0) {
+        mId = userb + "_" + usera;
+    } else if (usera.localeCompare(userb) < 0) {
+        mId = usera + "_" + userb;
+    }
+    messages.orderByChild('messageId').equalTo(mId).once('value', function(data) {
+        var dv = data.val(); 
+        if (dv == undefined) {
+            cb(undefined);
+        }
+        else {
+            var messobj = dv[Object.getOwnPropertyNames(dv)[0]];
+            if (messobj == undefined) {
+                cb(undefined);
+            } else {
+                cb(messobj);
+            }
+        }
+    });    
+}
+
+function dao_sendMessageFromUserToUser(sender, receiver, message) {
+    if (sender == receiver) {
+        return;
+    } else {
+        var m = {};
+        var mId = "";
+        if (sender.localeCompare(receiver) > 0) {
+            mId = receiver + "_" + sender;
+        } else {
+            mId = sender + "_" + receiver;
+        }
+        console.log(firebase.database().ref("messages/").orderByChild('messageId').equalTo(mId).ref.toString());
+        firebase.database().ref("messages/").orderByChild('messageId').equalTo(mId).once('value', function(data) {
+            var mkey = "m_" + mId;
+            if (data.val() != undefined) {
+                mkey = Object.getOwnPropertyNames(data.val())[0];
+            }
+            firebase.database().ref("messages/").child(mkey).transaction(function(currData) {
+                dao_addMessageThreadToUser(sender, mId);
+                dao_addMessageThreadToUser(receiver, mId);
+                if (currData === null) {
+                    return {
+                        'messageId' : mId,
+                        'messages' : [
+                            {
+                                'sender' : sender,
+                                'message' : message
+                            }
+                        ]
+                    };
+                } else {
+                    console.log(currData);
+                    currData.messages.push({'sender':sender, 'message':message});
+                    return currData;
+                }
+            });
+        });
+    }
 }
