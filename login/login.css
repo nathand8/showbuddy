@@ -1,0 +1,42 @@
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+	text-align: center;
+    font-size: 20;
+    max-width: 500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button, #login {
+    background-color: #4CAF50;
+    color: white;
+    font-size:20;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+.login-img {
+    filter: grayscale(1);
+    margin: 10px;
+	width: 200px;
+	height: 40px;
+}
+
+#signup {
+	width: 250px;
+	height: 100px;
+	border-radius: 10px;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
