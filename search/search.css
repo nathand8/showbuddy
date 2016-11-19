@@ -1,0 +1,16 @@
+div.search-page .search-container {
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+
+div.search-page #search-input {
+    width: 100%
+}
+
+div.search-page h4 {
+    margin-left: 10px;
+}
+
+div.event-card-list {
+    margin: 10px;
+}
