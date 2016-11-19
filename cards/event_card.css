@@ -1,2 +1,46 @@
+div.event-card {
+    color: white;
+    background-color: #3F3F3F;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+div.event-card h3 {
+    margin: 0 0 10px 0;
+}
+
+div.event-card .glyphicon {
+    margin-right: 3px;
+}
+
+div.event-card .event-info {
+    margin-right: 20px;
+}
+
+div.event-card span.event-picture-container {
+}
+
+div.event-card div.event-details {
+    margin: 10px;
+}
+
+div.event-card .event-description {
+    color: white;
+}
+
+div.event-card .event-tag {
+    color: #3F3F3F;
+    background-color: #FFCF27;
+    font-size: 12px;
+    margin-left: 3px;
+    min-width: 20px;
+    padding: 0px 10px;
+}
+
+div.event-card .event-tags {
+    margin-bottom: 10px;
+}
+
 
 
