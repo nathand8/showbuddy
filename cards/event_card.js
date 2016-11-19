@@ -4,7 +4,7 @@ $(function() {
 
 function setText(containerDiv, selectorId, text) {
     if (containerDiv && selectorId && text)
-        containerDiv.find('[id="' + selectorId + '"]')[0].innerHTML = '<span>' + text + '</span';
+        containerDiv.find('[id="' + selectorId + '"]')[0].innerHTML = '<span>' + text + '</span>';
 }
 
 function loadCard(cardDiv, ev) {
