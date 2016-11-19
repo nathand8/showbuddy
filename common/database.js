@@ -101,7 +101,9 @@ function dao_getTestEvent(cb) {
 }
 
 function dao_setEventByID(eid, eobject) {
-    // TODO: UPSERT event by eid
+    var db = firebase.database();
+    var events = db.ref("events/");
+    events.push(eobject);
 }
 
 /*
