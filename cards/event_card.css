@@ -15,7 +15,7 @@ div.event-card .glyphicon {
 }
 
 div.event-card .event-info {
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 div.event-card span.event-picture-container {
@@ -40,6 +40,10 @@ div.event-card .event-tag {
 
 div.event-card .event-tags {
     margin-bottom: 10px;
+}
+
+div.event-card img.event-picture {
+    max-width: 40px;
 }
 
 
