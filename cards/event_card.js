@@ -47,3 +47,20 @@ function loadCard(cardDiv, ev) {
         });
     }
 }
+
+function rejectEvent(actionElem) {
+    $(actionElem).parent().addClass("rejected");
+    setTimeout(function() {
+        $(actionElem).parent().remove();
+    }, 500);
+}
+
+function acceptEvent(actionElem) {
+    $(actionElem).parent().addClass("accepted");
+    setTimeout(function() {
+        $(actionElem).parent().remove();
+    }, 500);
+}
+
+function hideCard(cardElem) {
+}
