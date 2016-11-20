@@ -4,11 +4,13 @@
 
 .header .navbar-header {
     border-bottom: 2px solid yellow;
+    width: 100%
 }
 
 .header .navbar-header .navbar-text {
     text-align: center;
     font-weight: bold;
+    width: 100%;
 }
 
 .header .navbar-logo {
