@@ -63,3 +63,7 @@ div.event-card .event-card-action.left {
     left: -5px;
 }
 
+div.event-card .event-date-time-venue {
+    font-size: 12px;
+}
+
