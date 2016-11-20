@@ -43,7 +43,7 @@ function loadCard(cardDiv, ev) {
 
     if (ev.tags && ev.tags.length > 0) {
         $.each(ev.tags, function(i, tag) {
-            $(cardDiv.find('[id="event_tags"]')[0]).append('<span class="event-tag">' + tag + '</span>');
+            $(cardDiv.find('[id="event_tags"]')[0]).append('<div class="event-tag">' + tag + '</div>');
         });
     }
 }

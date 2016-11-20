@@ -36,6 +36,8 @@ div.event-card .event-tag {
     margin-left: 3px;
     min-width: 20px;
     padding: 0px 10px;
+    display: inline-block;
+    margin-bottom: 2px;
 }
 
 div.event-card .event-tags {
