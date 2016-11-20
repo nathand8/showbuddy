@@ -17,6 +17,7 @@
 		<script type ="text/javascript" src="newevent.js"></script>
         <link rel="stylesheet" href="/libs/bootstrap.min.css" />
         <link rel="stylesheet" href="/common/main.css" />
+		<link rel="stylesheet" href="newevent.css" />
     </head> 
 
     <body> 
@@ -34,10 +35,21 @@
 					<input type="text" placeholder="Event Title" name="title" required>
 				</div>
 				<div>
-					<label>Add Artists</label>
+					<label>Artists</label>
 				</div>
 				<div>
-					<input type="text" placeholder="Artist Name" name="bands" required>
+					<input type="text" placeholder="Add an Artist" id="artists" required>
+					<button id="addArtist" onclick="addArtist()">+</button>
+				</div>
+				<div>
+					<ul id = "artistlist">
+					</ul>
+				</div>
+				<div>
+					<label>Description</label>
+				</div>
+				<div>
+					<textarea placeholder="Type your event description..." name="desc" id ="desc"> </textarea>
 				</div>
 				<div>
 					<label>Venue Name</label>
@@ -56,6 +68,17 @@
 				</div>
 				<div>
 					<input class="timepicker" type="text" placeholder="Event Time" name="time" required>
+				</div>
+				<div>
+					<label>Genres</label>
+				</div>
+				<div>
+					<input type="text" placeholder="Add a Genre" id="genres">
+					<button id="addGenre" onclick="addGenre()">+</button>
+				</div>
+				<div>
+					<ul id = "genrelist">
+					</ul>
 				</div>
 				<div>
 					<button type="submit">Create!</button>

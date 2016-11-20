@@ -1,0 +1,11 @@
+#desc {
+	width: 500px;
+	height: 70px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
