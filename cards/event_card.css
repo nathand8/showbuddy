@@ -4,6 +4,7 @@ div.event-card {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 div.event-card h3 {
@@ -36,6 +37,8 @@ div.event-card .event-tag {
     margin-left: 3px;
     min-width: 20px;
     padding: 0px 10px;
+    display: inline-block;
+    margin-bottom: 2px;
 }
 
 div.event-card .event-tags {
@@ -43,8 +46,55 @@ div.event-card .event-tags {
 }
 
 div.event-card img.event-picture {
-    max-width: 40px;
+    max-width: 100px;
+    margin-top: 8px;
 }
 
+div.event-card .event-card-action {
+    position: absolute;
+    top: calc(50% - 10px);
+    cursor: pointer;
+    opacity: 0.6;
+}
 
+div.event-card .event-card-action:focus, div.event-card .event-card-action:hover {
+    opacity: 1.0;
+}
+
+div.event-card .event-card-action.right {
+    left: calc(100% - 78px);
+}
+
+div.event-card .event-card-action.left {
+    left: -5px;
+}
+
+div.event-card .event-date-time-venue {
+    font-size: 12px;
+}
+
+div.event-card {
+    transition: left 0.5s ease-in, margin-bottom 0.5s ease-in, top 0.5s ease-in, max-height 0.5s ease-in, opacity 0.5s ease-in, transform 0.5s ease-in;
+    left: 0%;
+    opacity: 1;
+    max-height: 200%;
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+div.event-card.accepted {
+    left: 105%;
+    max-height: 0%;
+    opacity: 0;
+    margin-bottom: -20px;
+    transform: scaleY(0);
+}
+
+div.event-card.rejected {
+    left: -105%;
+    max-height: 0%;
+    opacity: 0;
+    margin-bottom: -20px;
+    transform: scaleY(0);
+}
 

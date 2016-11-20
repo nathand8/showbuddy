@@ -1,5 +1,6 @@
 .footer .navbar-header {
     border-top: 2px solid yellow;
+    width: 100%;
 }
 
 .footer .quarter-screen-footer {

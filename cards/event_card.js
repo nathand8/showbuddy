@@ -4,7 +4,7 @@ $(function() {
 
 function setText(containerDiv, selectorId, text) {
     if (containerDiv && selectorId && text)
-        containerDiv.find('[id="' + selectorId + '"]')[0].innerHTML = '<span>' + text + '</span';
+        containerDiv.find('[id="' + selectorId + '"]')[0].innerHTML = '<span>' + text + '</span>';
 }
 
 function loadCard(cardDiv, ev) {
@@ -43,7 +43,24 @@ function loadCard(cardDiv, ev) {
 
     if (ev.tags && ev.tags.length > 0) {
         $.each(ev.tags, function(i, tag) {
-            $(cardDiv.find('[id="event_tags"]')[0]).append('<span class="event-tag">' + tag + '</span>');
+            $(cardDiv.find('[id="event_tags"]')[0]).append('<div class="event-tag">' + tag + '</div>');
         });
     }
+}
+
+function rejectEvent(actionElem) {
+    $(actionElem).parent().addClass("rejected");
+    setTimeout(function() {
+        $(actionElem).parent().remove();
+    }, 500);
+}
+
+function acceptEvent(actionElem) {
+    $(actionElem).parent().addClass("accepted");
+    setTimeout(function() {
+        $(actionElem).parent().remove();
+    }, 500);
+}
+
+function hideCard(cardElem) {
 }
