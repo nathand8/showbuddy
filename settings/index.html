@@ -9,17 +9,19 @@
             });
         </script> 
         <script src="/libs/bootstrap.min.js"></script>
-        <script src="/common/database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+        <script src="/common/database.js" sync></script>
 	<script src="/settings/scripts.js"></script>
         <link rel="stylesheet" href="/libs/bootstrap.min.css" />
         <link rel="stylesheet" href="/common/main.css" />
+	<link rel="stylesheet" href="/settings/style.css" />
     </head> 
 
     <body> 
         <div id="header"></div>
         <div id="content">
         <!-- HEADER. PUT YOUR CONTENT BELOW -->
-		<h3 class="sectionTitle">Settings</h3>
+		<h2>Settings</h2>
 		<div id="personalProfileTitle" class="sectionTitleBox">
 			<h3 class="sectionTitle">Personal Profile</h3>
 		</div>
@@ -54,22 +56,30 @@
 			<h3 class="sectionTitle">Buddy Preferences</h3>
 		</div>
 		<div id="buddyPreferences" class="expandable">
-			<p class="questionLabel">Age Range</p>
-			<input type="number" id="minAge" class="otherInput" min=1 max=120 value=18></input>
-			<p>to</p>
-			<input type="number" id="maxAge" class="otherInput" min=1 max=120 value=24></input>
-			<p class="questionLabel">Gender</p>
-			<select id="buddyGender" class="otherinput">
-				<option value="any">Any</option>
-				<option value="female">Female</option>
-				<option value="male">Male</option>
-				<option value="other">Other</option>
-			</select>
+			<div class="sameLine">
+				<p class="questionLabel">Age Range</p>
+				<input type="number" id="minAge" class="otherInput" min=1 max=120 value=18></input>
+				<p>to</p>
+				<input type="number" id="maxAge" class="otherInput" min=1 max=120 value=24></input>
+			</div>
+			<br>
+			<br>
+			<div class="sameLine">
+				<p class="questionLabel">Gender</p>
+				<select id="buddyGender" class="otherinput">
+					<option value="any">Any</option>
+					<option value="female">Female</option>
+					<option value="male">Male</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+			<br>
 			<br>
 			<input type="checkbox" id="individuals" name="individuals" value="Individuals">Individuals</input>
 			<br>
 			<input type="checkbox" id="groups" name="groups" value="Groups">Groups</input>
 		</div>
+		<br>
 		<input type="submit" value="Save" name="saveSettings" id="saveSettings"></input>
         <!-- FOOTER. PUT YOUR CONTENT ABOVE -->
         </div>

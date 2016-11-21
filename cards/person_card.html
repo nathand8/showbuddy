@@ -1,10 +1,26 @@
-<link rel="stylesheet" href="person_card.css" />
-<div id="person_card">
-    <div id="person_picture"></div>
-    <div>
-        <span id="person_screenname"></span>
-        <span id="person_age"></span>
+<div class="person-card" id="person_card">
+    <div class="person-card-action left" onclick="rejectPerson(this)">
+        <img class="person-card-reject-action" src="/images/red-reject.png" />
     </div>
-    <div id="person_description"></div>
+    <div class="person-card-action right" onclick="acceptPerson(this)">
+        <img class="person-card-accept-action" src="/images/green-accept.png" />
+    </div>
+    <h3 id="person_name"></h3>
+    <div class="person-age">
+        <span class="glyphicon glyphicon-info-sign"></span><span id="person_age" class="person-info"></span>
+    </div>
+    <table>
+        <tbody>
+        <tr>
+            <td valign="top">
+                <span id="person_picture" class="person-picture-container"></span>
+            </td>
+            <td valign="top">
+                <div class="person-details">
+                    <div id="person_description" class="person-description"></div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-

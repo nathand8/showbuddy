@@ -7,7 +7,7 @@ function setText(containerDiv, selectorId, text) {
         containerDiv.find('[id="' + selectorId + '"]')[0].innerHTML = '<span>' + text + '</span>';
 }
 
-function loadCard(cardDiv, ev) {
+function loadEventCard(cardDiv, ev) {
 
     if (!cardDiv || !ev) {
         console.error("Missing card div or event");

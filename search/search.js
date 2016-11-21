@@ -15,7 +15,7 @@ function loadCards() {
         var eventDiv = $(document.createElement('DIV'));
         $('div.event-card-list').append(eventDiv);
         eventDiv.load("/cards/event_card.html", function() {
-            loadCard(eventDiv, ev)
+            loadEventCard(eventDiv, ev)
         });
     })
 }
