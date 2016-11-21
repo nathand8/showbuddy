@@ -9,12 +9,12 @@ var test_convos = [
             {
                 message: "Let's carpool to the concert this weekend",
                 sender: "testUser",
-                timestamp: ""
+                timestamp: new Date(2016,10,21,11,30)
             },
             {
                 message: "That's a good idea. I'll pick you up at 6",
                 sender: "harambe",
-                timestamp: ""
+                timestamp: new Date(2016,10,21,11,45)
             }
         ]
     },
@@ -24,12 +24,12 @@ var test_convos = [
             {
                 message: "You have to come to my concert. I have the best concerts. It's gonna be yuuge!",
                 sender: "trump",
-                timestamp: ""
+                timestamp: new Date(2016,10,20,11,30)
             },
             {
                 message: "I'll be there :)",
                 sender: "testUser",
-                timestamp: ""
+                timestamp: new Date(2016,10,20,11,45)
             }
         ]
     }

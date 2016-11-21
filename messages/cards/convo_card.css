@@ -1,0 +1,30 @@
+div.convo-card {
+    color: white;
+    background-color: #3F3F3F;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+div.convo-card div.convo-details {
+    margin: 10px;
+    font-size: 12px;
+}
+
+div.convo-card div.person-name {
+
+}
+
+div.convo-card .convo-time {
+    margin-bottom: 10px;
+}
+
+div.convo-card .convo-message {
+    color: white;
+}
+
+div.convo-card img.person-picture {
+    max-width: 100px;
+    margin-top: 8px;
+}
