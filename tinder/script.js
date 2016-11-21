@@ -29,7 +29,7 @@ var test_people = [
 
 function loadCards() {
     var eventDiv = $(document.createElement('DIV'));
-    $('div.event-card').append(eventDiv);
+    $('div.event-card-header').append(eventDiv);
     eventDiv.load("/cards/event_card.html", function() {
         loadEventCard(eventDiv, test_event);
     });
