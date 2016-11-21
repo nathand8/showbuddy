@@ -65,6 +65,12 @@ function dao_getUserWithLogin(uname, upass, cb) {
     });
 }
 
+function updateTheTestUser(uobj) {
+    firebase.database().ref("users/").child('TheTestUser').transaction(function(currData) {
+        return uobj;
+    }
+}
+
 function dao_addMessageThreadToUser(user, messageId) {
     console.log(firebase.database().ref("users/").child(user).toString());
     firebase.database().ref("users/").child(user).transaction(function(currData) {
