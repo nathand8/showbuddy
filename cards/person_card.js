@@ -5,7 +5,7 @@ function setText(containerDiv, selectorId, text) {
 
 function loadPersonCard(cardDiv, p) {
     if (!cardDiv || !p) {
-        console.error("Missing card div or event");
+        console.error("Missing card div or person");
         return false;
     }
 
