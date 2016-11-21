@@ -13,9 +13,12 @@ var events = [
 function loadCards() {
     $.each(events, function(i, ev) {
         var eventDiv = $(document.createElement('DIV'));
+        eventDiv.click(function() {
+            window.location = '/tinder/'
+        });
         $('div.event-card-list').append(eventDiv);
         eventDiv.load("/cards/event_card.html", function() {
-            loadEventCard(eventDiv, ev, true)
+            loadEventCard(eventDiv, ev, false)
         });
     })
 }

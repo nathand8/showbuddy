@@ -7,7 +7,7 @@ function setText(containerDiv, selectorId, text) {
         containerDiv.find('[id="' + selectorId + '"]')[0].innerHTML = '<span>' + text + '</span>';
 }
 
-function loadEventCard(cardDiv, ev) {
+function loadEventCard(cardDiv, ev, showButtons) {
 
     if (!cardDiv || !ev) {
         console.error("Missing card div or event");
@@ -44,6 +44,12 @@ function loadEventCard(cardDiv, ev) {
     if (ev.tags && ev.tags.length > 0) {
         $.each(ev.tags, function(i, tag) {
             $(cardDiv.find('[id="event_tags"]')[0]).append('<div class="event-tag">' + tag + '</div>');
+        });
+    }
+
+    if (showButtons) {
+        cardDiv.find('.event-card-action.hidden').each(function(i, button) {
+            $(button).removeClass('hidden');
         });
     }
 }

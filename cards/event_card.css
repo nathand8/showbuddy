@@ -98,3 +98,7 @@ div.event-card.rejected {
     /*transform: scaleY(0);*/
 }
 
+div.event-card .event-card-action.hidden {
+    display: none;
+}
+
