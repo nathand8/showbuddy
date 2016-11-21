@@ -1,12 +1,32 @@
 $(document).ready(function() {
 	dao_setup()
-	let user = dao_getTestUser(function (data) {
-		console.log(data)
-	})
-	let userInfo = {
-		event_preferences: []
-	}
+	let userInfo = {}
 	let tagId = 0
+	dao_getTestUser(function (data) {
+		userInfo = data
+		console.log(userInfo)
+		$("#displayName").val(userInfo.screenname)
+		$("#age").val(userInfo.age)
+		$("#gender").val(userInfo.gender)
+		$("#bio").val(userInfo.description)
+		$("#minAge").val(userInfo.buddy_age_min)
+		$("#maxAge").val(userInfo.buddy_age_max)
+		$("#buddyGender").val(userInfo.buddy_gender)
+		$("#individuals").prop("checked", userInfo.individual)
+		$("#groups").prop("checked", userInfo.group)
+		for (let i = 0; i < userInfo.event_preferences.length; i++) {
+			console.log(userInfo.event_preferences[i])
+			let curTag = tagId
+			let tag = "<div id='tag" + curTag + "' class='tag'>" + userInfo.event_preferences[i] + "<span id='remove" + curTag + "' class='exit'>&times;</span></div>"
+			$("#genres").append(tag)
+			$("#remove" + curTag).click(function() {
+				let index = userInfo.event_preferences.indexOf(userInfo.event_preferences[i])
+				userInfo.event_preferences.splice(index, 1)
+				$("#tag" + curTag).remove()
+			})
+			tagId++
+		}
+	})
 	$("#personalProfile").hide()
 	$("#eventPreferences").hide()
 	$("#buddyPreferences").hide()
@@ -29,7 +49,6 @@ $(document).ready(function() {
 		$("#remove" + curTag).click(function() {
 			let index = userInfo.event_preferences.indexOf(contents)
 			userInfo.event_preferences.splice(index, 1)
-			console.log(userInfo)
 			$("#tag" + curTag).remove()
 		})
 		tagId++
@@ -49,9 +68,13 @@ $(document).ready(function() {
 		userInfo.description = $("#bio").val()
 		userInfo.buddy_age_min = $("#minAge").val()
 		userInfo.buddy_age_max = $("#maxAge").val()
-		userInfo.buddy_gender = $("#buddygender").val()
+		userInfo.buddy_gender = $("#buddyGender").val()
 		userInfo.individual = $("#individuals").is(':checked')
 		userInfo.group = $("#groups").is(':checked')
 		console.log(userInfo)
+		let updateInfo = {}
+		updateInfo['/users/' + userInfo.username] = userInfo
+		firebase.database().ref().update(updateInfo)
+		//dao_setUserByUsername(userInfo.username, userInfo, function () {})
 	})
 })
