@@ -42,25 +42,27 @@ function submit() {
 };
 	
 function submitForm() {
-		var eventObj = {};
 		var title = document.getElementById("title").value;
-		eventObj["title"] = title;
-		var artistlist = document.getElementById("artistlist");
-		var artists = {};
-		for (var i = 0; i < artistlist.length; i++) {
-			artists[i] = artistlist.childNodes[0].childNodes[i].nodeValue;
-		};
-		eventObj["artists"] = JSON.stringify(artists);
-		eventObj["date"] = document.getElementById("date").value;
-		eventObj["time"] = document.getElementById("time").value;
-		eventObj["venue"] = document.getElementById("venue").value;
-		var genrelist = document.getElementById("genrelist");
-		var genres = {};
-		for (var i = 0; i < genrelist.length; i++) {
-			genres[i] = genrelist.childNodes[0].childNodes[i].nodeValue;
-		};
-		eventObj["genres"] = JSON.stringify(genres);
-		eventObj["description"] = document.getElementById("desc").value;
+		var artists =  $('#artistlist').find('li').map(function() {
+			return $(this).text();
+		}).toArray();
+		var date = document.getElementById("date").value;
+		var time = document.getElementById("time").value;
+		var venue = document.getElementById("venue").value;
+		var genres =  $('#genrelist').find('li').map(function() {
+			return $(this).text();
+		}).toArray();
+		var description = document.getElementById("desc").value;
 		
-		return JSON.stringify(eventObj);
+		var eObject = {
+			title: title,
+			artists: artists,
+			date: date,
+			time: time,
+			tags: genres,
+			description: description
+		}
+		
+		//alert(eObject);
+		return eObject;
 };

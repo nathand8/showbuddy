@@ -26,7 +26,7 @@ function dao_getUserByUsername(uname, cb) {
         }
         else {
             var userobj = dv[Object.getOwnPropertyNames(dv)[0]];
-            if (userobj == undefined) {
+            if (userobj == undefined) {	
                 cb(undefined);
             } else {
                 cb(userobj);
