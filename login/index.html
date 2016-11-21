@@ -1,3 +1,10 @@
+<!-- 
+	TO BE FIXED:
+		Actually check username/password
+		Facebook/Google+ signin
+		SignUp button
+-->
+
 <html> 
     <head> 
         <meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0" />
@@ -13,6 +20,8 @@
         <link rel="stylesheet" href="/libs/bootstrap.min.css" />
         <link rel="stylesheet" href="/common/main.css" />
 		<link rel="stylesheet" href="login.css" />
+		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+		<script type ="text/javascript" src="login.js"></script>
     </head> 
 
     <body> 
@@ -29,13 +38,13 @@
 			</div>
 			<div class="container">
 				<div>
-					<input type="text" placeholder="Enter Username" name="uname" required>
+					<input type="text" placeholder="Enter Username" id="uname" required>
 				</div>
 				<div>
-					<input type="password" placeholder="Enter Password" name="psw" required>
+					<input type="password" placeholder="Enter Password" id="psw" required>
 				</div>
 				<div>
-					<input id="login" type="submit" value="Login"></input>
+					<button id="login" onclick="login()">Login</input>
 				</div>
 				<div>
 					<img class="login-img" src="/images/facebook.png"/>
@@ -50,7 +59,7 @@
 				</div>
 			</div>
 			<div>
-				<button type="text" id="signup">Sign Up!</button>
+				<button id="signup" onclick="signup()">Sign Up!</button>
 			</div>
 		</div>
 		<!-- FOOTER. PUT YOUR CONTENT ABOVE -->

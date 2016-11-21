@@ -26,7 +26,7 @@ function dao_getUserByUsername(uname, cb) {
         }
         else {
             var userobj = dv[Object.getOwnPropertyNames(dv)[0]];
-            if (userobj == undefined) {
+            if (userobj == undefined) {	
                 cb(undefined);
             } else {
                 cb(userobj);
@@ -63,6 +63,12 @@ function dao_getUserWithLogin(uname, upass, cb) {
             cb(undefined);
         }
     });
+}
+
+function updateTheTestUser(uobj) {
+    firebase.database().ref("users/").child('TheTestUser').transaction(function(currData) {
+        return uobj;
+    }
 }
 
 function dao_addMessageThreadToUser(user, messageId) {
