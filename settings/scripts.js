@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	dao_setup()
+	let user = dao_getTestUser(function (data) {
+		console.log(data)
+	})
 	let userInfo = {
 		event_preferences: []
 	}
