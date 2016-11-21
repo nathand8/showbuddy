@@ -59,7 +59,7 @@ div.person-card {
     transition: left 0.5s ease-in, margin-bottom 0.5s ease-in, top 0.5s ease-in, max-height 0.5s ease-in, opacity 0.5s ease-in, transform 0.5s ease-in;
     left: 0%;
     opacity: 1;
-    max-height: 200%;
+    max-height: 100%;
     transform: scaleY(1);
     transform-origin: top;
 }
@@ -69,7 +69,6 @@ div.person-card.accepted {
     max-height: 0%;
     opacity: 0;
     margin-bottom: -20px;
-    transform: scaleY(0);
 }
 
 div.person-card.rejected {
@@ -77,5 +76,9 @@ div.person-card.rejected {
     max-height: 0%;
     opacity: 0;
     margin-bottom: -20px;
-    transform: scaleY(0);
 }
+
+div.person-card .person-card-action.hidden {
+    display: none;
+}
+
