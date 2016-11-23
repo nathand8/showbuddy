@@ -180,3 +180,35 @@ function dao_sendMessageFromUserToUser(sender, receiver, message) {
         });
     }
 }
+
+/*
+ * Matches
+ */
+ 
+function dao_getUserMatches(uname, cb) {
+    var db = firebase.database();
+    var matches = db.ref("matches/");
+    matches.orderByChild('matcher').equalTo(uname).once('value', function(data) {
+        var dv = data.val();
+        if (dv == undefined) {
+            cb(undefined);
+        }
+        else {
+            var matchobj = dv[Object.getOwnPropertyNames(dv)[0]];
+            if (matchobj == undefined) {
+                cb(undefined);
+            } else {
+                cb(matchobj);
+            }
+        }
+    });    
+}
+
+function dao_saveMatch(matcher, matchee) {
+    var db = firebase.database();
+    var matches = db.ref("matches/");
+    matches.push({
+        'matcher' : matcher,
+        'matchee' : matchee
+    });    
+}
