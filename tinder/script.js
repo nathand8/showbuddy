@@ -31,14 +31,14 @@ function loadCards() {
     var eventDiv = $(document.createElement('DIV'));
     $('div.event-card-header').append(eventDiv);
     eventDiv.load("/cards/event_card.html", function() {
-        loadEventCard(eventDiv, test_event);
+        loadEventCard(eventDiv, test_event, false);
     });
 
     $.each(test_people, function(i, p) {
         var personDiv = $(document.createElement('DIV'));
         $('div.people-cards').append(personDiv);
         personDiv.load("/cards/person_card.html", function() {
-            loadPersonCard(personDiv, p);
+            loadPersonCard(personDiv, p, true);
         });
     });
 }
