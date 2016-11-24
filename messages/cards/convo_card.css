@@ -30,3 +30,27 @@ div.convo-card img.person-picture {
     max-width: 100px;
     margin-top: 8px;
 }
+
+.modal-content {
+    background-color: #3F3F3F;
+}
+
+.modal-title {
+    color: #FFCF27;
+}
+
+.close {
+    color: white;
+}
+
+.message {
+    color: white;
+}
+
+#message-input {
+    width: 100%;
+}
+
+#message-image {
+    width: 10%;
+}
