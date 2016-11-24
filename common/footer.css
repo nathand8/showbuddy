@@ -33,3 +33,11 @@
 .footer .quarter-screen-footer.active {
     background-color: #e2e1e1;
 }
+
+.footer .icon-badge {
+    position: absolute;
+    top: -5px;
+    left: 15px;
+    background-color: red;
+    padding-bottom: 5px;
+}
