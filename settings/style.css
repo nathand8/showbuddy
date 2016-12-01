@@ -25,3 +25,8 @@ h4 {
 #content {
     margin: 10px;
 }
+
+.sectionTitleBox .dropdown-indicator {
+    font-size: 20px;
+    float: right;
+}

@@ -30,13 +30,20 @@ $(document).ready(function() {
 	$("#personalProfile").hide()
 	$("#eventPreferences").hide()
 	$("#buddyPreferences").hide()
-	$("#personalProfileTitle").click(function() {
+	$(".dropdown-indicator").addClass("glyphicon glyphicon-chevron-right");
+	$("#personalProfileTitle").click(function(ev) {
+        $(ev.target).find('.dropdown-indicator').toggleClass('glyphicon-chevron-down');
+        $(ev.target).find('.dropdown-indicator').toggleClass('glyphicon-chevron-right');
 		$("#personalProfile").toggle()
 	})
-	$("#eventPreferencesTitle").click(function() {
+	$("#eventPreferencesTitle").click(function(ev) {
+        $(ev.target).find('.dropdown-indicator').toggleClass('glyphicon-chevron-down');
+        $(ev.target).find('.dropdown-indicator').toggleClass('glyphicon-chevron-right');
 		$("#eventPreferences").toggle()
 	})
-	$("#buddyPreferencesTitle").click(function() {
+	$("#buddyPreferencesTitle").click(function(ev) {
+        $(ev.target).find('.dropdown-indicator').toggleClass('glyphicon-chevron-down');
+        $(ev.target).find('.dropdown-indicator').toggleClass('glyphicon-chevron-right');
 		$("#buddyPreferences").toggle()
 	})
 	$("#addGenreButton").click(function() {
