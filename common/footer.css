@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+.footer .footer-label {
+    font-size: 10px;
+    text-align: center;
+}
+
 .footer .quarter-screen-footer {
     display: block;
     float: left;
@@ -17,11 +22,14 @@
     border-left: 1px solid silver;
 }
 
-.footer .quarter-screen-footer .glyphicon {
-    padding-top: 11px;
+.footer .footer-link {
+    display: inline-block;
+    padding-top: 5px;
     width: 100%;
     height: 100%;
-    text-align: center;
+}
+
+.footer .quarter-screen-footer .glyphicon {
 }
 
 .footer .quarter-screen-footer a {
