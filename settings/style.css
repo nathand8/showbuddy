@@ -17,3 +17,11 @@
 	float: left;
 	margin-left: 2px;
 }
+
+h4 {
+    text-align: center;
+}
+
+#content {
+    margin: 10px;
+}
