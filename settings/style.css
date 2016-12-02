@@ -30,3 +30,11 @@ h4 {
     font-size: 20px;
     float: right;
 }
+
+.tag {
+    margin-bottom: 2px;
+}
+
+.tag button {
+    float: left;
+}

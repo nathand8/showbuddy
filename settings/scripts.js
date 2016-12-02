@@ -17,7 +17,7 @@ $(document).ready(function() {
 		for (let i = 0; i < userInfo.event_preferences.length; i++) {
 			console.log(userInfo.event_preferences[i])
 			let curTag = tagId
-			let tag = "<div id='tag" + curTag + "' class='tag'>" + userInfo.event_preferences[i] + "<span id='remove" + curTag + "' class='exit'>&times;</span></div>"
+			let tag = "<div id='tag" + curTag + "' class='tag'>" + userInfo.event_preferences[i] + "<button type='button' id='remove" + curTag + "'class='close exit'><span>&times;</span></button></div>"
 			$("#genres").append(tag)
 			$("#remove" + curTag).click(function() {
 				let index = userInfo.event_preferences.indexOf(userInfo.event_preferences[i])
@@ -49,7 +49,7 @@ $(document).ready(function() {
 	$("#addGenreButton").click(function() {
 		let contents = $("#addGenre").val()
 		let curTag = tagId
-		let tag = "<div id='tag" + curTag + "' class='tag'>" + contents + "<span id='remove" + curTag + "' class='exit'>&times;</span></div>"
+		let tag = "<div id='tag" + curTag + "' class='tag'>" + contents + "<button type='button' id='remove" + curTag + "'class='close exit'><span>&times;</span></button></div>"
 		$("#genres").append(tag)
 		userInfo.event_preferences.push(contents)
 		$("#addGenre").val('')
