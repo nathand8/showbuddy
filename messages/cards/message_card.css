@@ -1,0 +1,22 @@
+div.msg-card {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#msg-body {
+    color: black;
+}
+
+#msg-time {
+    color: #3F3F3F;
+}
+
+.sent {
+    background-color: white;
+}
+
+.received {
+    background-color: #FFCF27;
+}

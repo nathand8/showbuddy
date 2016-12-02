@@ -17,3 +17,24 @@
 	float: left;
 	margin-left: 2px;
 }
+
+h4 {
+    text-align: center;
+}
+
+#content {
+    margin: 10px;
+}
+
+.sectionTitleBox .dropdown-indicator {
+    font-size: 20px;
+    float: right;
+}
+
+.tag {
+    margin-bottom: 2px;
+}
+
+.tag button {
+    float: left;
+}
