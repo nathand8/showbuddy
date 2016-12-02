@@ -10,6 +10,7 @@ function login() {
 			alert("Wrong Username/Password combo");
 		} 
 		else {
+			setCurrentUser(name);
 			window.location = "/search/";
 		}		
 	});
@@ -23,14 +24,12 @@ function signup() {
 		username: name,
 		password: password
 	}
-	//console.log("1");
 		dao_checkUsernameAvailable(name, function(taken) {
-		//console.log("2" + name);
 		if (!taken) {
-			//console.log("3");
 			dao_setUserByUsername(name, user);
 			alert("Welcome to Show Buddy, " + name + "!");
 			window.location = "/settings/";
+			setCurrentUser(name);
 		}
 		else {
 			alert("Username is Taken");
