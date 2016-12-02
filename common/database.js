@@ -39,7 +39,7 @@ function dao_getTestUser(cb) {
     dao_getUserByUsername('TheTestUser', cb);
 }
 
-function dao_setUserByUsername(uname, uobject, cb) {
+function dao_setUserByUsername(uname, uobject) {
     var db = firebase.database();
     var users = db.ref("users/");
     users.push(uobject);
@@ -47,7 +47,10 @@ function dao_setUserByUsername(uname, uobject, cb) {
 
 // returns boolean : username is available
 function dao_checkUsernameAvailable(uname, cb) {
+	//console.log("4");
     dao_getUserByUsername(uname, function(uobj) {
+		//console.log("5");
+		console.log("undefined: " + (uobj==undefined));
         cb(uobj == undefined);
     });
 }
