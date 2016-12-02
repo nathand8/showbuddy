@@ -28,8 +28,8 @@ function signup() {
 		if (!taken) {
 			dao_setUserByUsername(name, user);
 			alert("Welcome to Show Buddy, " + name + "!");
-			window.location = "/settings/";
 			setCurrentUser(name);
+			window.location = "/settings/";
 		}
 		else {
 			alert("Username is Taken");
