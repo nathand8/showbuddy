@@ -1,19 +1,19 @@
 $(function(){
-    loadCards();
+    dao_setup();
+    init();
 });
 
-var test_matches = [
-    {
-        name: "harambe",
-        phone: "555-333-1234",
-        email: "harambe@zoo.org"
-    },
-    {
-        name: "trump",
-        phone: "555-111-4444",
-        email: "trump@usa.gov"
-    }
-];
+function init() {
+    getCurrentUser(function(username) {
+        dao_getUserByUsername(username, function(user) {
+            $.each(user.matches, function(index, otherName) {
+                dao_getUserByUsername(otherName, function(otherUser) {
+                    loadCards([otherUser]);
+                })
+            });
+        })
+    })
+}
 
 function loadCards() {
     $.each(test_matches, function(i, c) {
