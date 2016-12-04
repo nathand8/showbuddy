@@ -115,6 +115,17 @@ function dao_setEventByID(eid, eobject) {
     events.push(eobject);
 }
 
+function dao_getAllEvents(cb) {
+    var db = firebase.database();
+    var events = db.ref("events/");
+    events.once('value', function(data) {
+        var eventsobj = data.val();
+        Object.keys(eventsobj).forEach(function(key,index) {
+            cb(eventsobj[key]);
+        });
+    });
+}
+
 /*
  * Messages
  */
