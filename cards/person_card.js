@@ -9,7 +9,7 @@ function loadPersonCard(cardDiv, p, showButtons) {
         return false;
     }
 
-    setText(cardDiv, "person_name", p.name);
+    setText(cardDiv, "person_name", p.name + ', ');
     setText(cardDiv, "person_age", p.age);
     setText(cardDiv, "person_description", p.description);
 
