@@ -21,7 +21,7 @@ div.convo-card .person-name {
     color: white;
 }
 
-.glyphicon {
+div.convo-card .glyphicon {
     color: white;
     margin-left: 10px;
 }
