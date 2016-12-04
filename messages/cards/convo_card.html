@@ -1,4 +1,4 @@
-<div class="convo-card" id="convo_card" data-toggle="modal" data-target="#myModal" onclick="loadMsgCards(id)">
+<div class="convo-card" id="convo_card">
     <table>
         <tbody>
         <tr>
@@ -8,9 +8,11 @@
             <td valign="top">
                 <div class="convo-details">
                     <span id="person_name" class="person-name"></span>
-                    <span id="convo_time" class="convo-time"></span>
                 </div>
-                <div id="convo_message" class="convo-message"></div>
+                <div>
+                    <span class="glyphicon glyphicon-earphone"></span><span id="person_phone" class="person-contact"></span><br>
+                    <span class="glyphicon glyphicon-envelope"></span><span id="person_email" class="person-contact"></span>
+                </div>
             </td>
         </tr>
         </tbody>
