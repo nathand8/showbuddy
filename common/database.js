@@ -51,7 +51,7 @@ function dao_checkUsernameAvailable(uname, cb) {
     dao_getUserByUsername(uname, function(uobj) {
 		//console.log("5");
 		console.log("undefined: " + (uobj==undefined));
-        cb(uobj == undefined);
+        cb(!uobj);
     });
 }
 
@@ -113,6 +113,17 @@ function dao_setEventByID(eid, eobject) {
     var db = firebase.database();
     var events = db.ref("events/");
     events.push(eobject);
+}
+
+function dao_getAllEvents(cb) {
+    var db = firebase.database();
+    var events = db.ref("events/");
+    events.once('value', function(data) {
+        var eventsobj = data.val();
+        Object.keys(eventsobj).forEach(function(key,index) {
+            cb(eventsobj[key]);
+        });
+    });
 }
 
 /*

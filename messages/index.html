@@ -1,18 +1,19 @@
 <html> 
     <head> 
         <meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0" />
-        <script src="/libs/jquery.min.js"></script> 
-        <script> 
-            $(function(){
-                $("#header").load("/common/header.html"); 
-                $("#footer").load("/common/footer.html"); 
-            });
-        </script> 
+        <script src="/libs/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
         <script src="/libs/bootstrap.min.js"></script>
         <script src="/common/database.js"></script>
         <script src="/messages/cards/convo_card.js"></script>
         <script src="/messages/cards/message_card.js"></script>
         <script src="script.js"></script>
+        <script>
+            $(function(){
+                $("#header").load("/common/header.html");
+                $("#footer").load("/common/footer.html");
+            });
+        </script>
         <link rel="stylesheet" href="/libs/bootstrap.min.css" />
         <link rel="stylesheet" href="/common/main.css" />
         <link rel="stylesheet" href="/messages/cards/convo_card.css" />

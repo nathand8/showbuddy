@@ -2,7 +2,7 @@ $(document).ready(function() {
 	dao_setup()
 	let userInfo = {}
 	let tagId = 0
-	dao_getTestUser(function (data) {
+	dao_getUserByUsername("dlee", function (data) {
 		userInfo = data
 		console.log(userInfo)
 		$("#displayName").val(userInfo.screenname)
@@ -14,7 +14,11 @@ $(document).ready(function() {
 		$("#buddyGender").val(userInfo.buddy_gender)
 		$("#individuals").prop("checked", userInfo.individual)
 		$("#groups").prop("checked", userInfo.group)
-		for (let i = 0; i < userInfo.event_preferences.length; i++) {
+		let length = 0
+		if (userInfo.event_preferences) {
+			length = userInfo.event_preferences.length
+		}
+		for (let i = 0; i < length; i++) {
 			console.log(userInfo.event_preferences[i])
 			let curTag = tagId
 			let tag = "<div id='tag" + curTag + "' class='tag'>" + userInfo.event_preferences[i] + "<button type='button' id='remove" + curTag + "'class='close exit'><span>&times;</span></button></div>"
@@ -51,7 +55,11 @@ $(document).ready(function() {
 		let curTag = tagId
 		let tag = "<div id='tag" + curTag + "' class='tag'>" + contents + "<button type='button' id='remove" + curTag + "'class='close exit'><span>&times;</span></button></div>"
 		$("#genres").append(tag)
-		userInfo.event_preferences.push(contents)
+		if (!userInfo.event_preferences) {
+			userInfo.event_preferences = [contents]
+		} else {
+			userInfo.event_preferences.push(contents)
+		}
 		$("#addGenre").val('')
 		$("#remove" + curTag).click(function() {
 			let index = userInfo.event_preferences.indexOf(contents)
@@ -79,9 +87,10 @@ $(document).ready(function() {
 		userInfo.individual = $("#individuals").is(':checked')
 		userInfo.group = $("#groups").is(':checked')
 		console.log(userInfo)
-		let updateInfo = {}
-		updateInfo['/users/' + userInfo.username] = userInfo
-		firebase.database().ref().update(updateInfo)
+		//let updateInfo = {}
+		//updateInfo['/users/' + userInfo.username] = userInfo
+		//firebase.database().ref().update(updateInfo)
+		dao_setUserByUsername(userInfo.username, userInfo)
 		//dao_setUserByUsername(userInfo.username, userInfo, function () {})
 	})
 })

@@ -13,17 +13,17 @@ div.convo-card div.convo-details {
 
 div.convo-card .person-name {
     color: #FFCF27;
+    font-size: 24px;
 }
 
-div.convo-card .convo-time {
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: white;
-}
-
-div.convo-card .convo-message {
-    color: white;
+.person-contact {
     margin: 10px;
+    color: white;
+}
+
+div.convo-card .glyphicon {
+    color: white;
+    margin-left: 10px;
 }
 
 div.convo-card img.person-picture {

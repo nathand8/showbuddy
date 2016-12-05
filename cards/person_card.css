@@ -7,8 +7,9 @@ div.person-card {
     position: relative;
 }
 
-div.person-card h3 {
+div.person-card .person-name {
     margin: 0 0 10px 0;
+    font-size: 24px;
 }
 
 div.person-card .glyphicon {
