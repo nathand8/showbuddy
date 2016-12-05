@@ -51,7 +51,7 @@ function dao_checkUsernameAvailable(uname, cb) {
     dao_getUserByUsername(uname, function(uobj) {
 		//console.log("5");
 		console.log("undefined: " + (uobj==undefined));
-        cb(uobj == undefined);
+        cb(!uobj);
     });
 }
 
