@@ -53,9 +53,15 @@ div.event-card img.event-picture {
 
 div.event-card .event-card-action {
     position: absolute;
-    top: calc(50% - 10px);
+    top: calc(50% - 20px);
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.85;
+    border: solid;
+    border-radius: 50px;
+}
+
+div.event-card .event-card-action img {
+    width: 30px;
 }
 
 div.event-card .event-card-action:focus, div.event-card .event-card-action:hover {
@@ -63,11 +69,11 @@ div.event-card .event-card-action:focus, div.event-card .event-card-action:hover
 }
 
 div.event-card .event-card-action.right {
-    left: calc(100% - 78px);
+    left: calc(100% - 36px);
 }
 
 div.event-card .event-card-action.left {
-    left: -5px;
+    left: 0px;
 }
 
 div.event-card .event-date-time-venue {
