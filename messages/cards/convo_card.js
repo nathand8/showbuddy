@@ -10,14 +10,12 @@ function loadConvoCard(cardDiv, c) {
         return false;
     }
 
-    cardDiv.find('[id="convo_card"]')[0].id = c.convoId;
-
-    setText(cardDiv, "person_name", c.name);
+    setText(cardDiv, "person_name", c.screenname);
 
     setText(cardDiv, "person_phone", c.phone);
     setText(cardDiv, "person_email", c.email);
 
-    cardDiv.find('[id="person_picture"]')[0].innerHTML = '<img class="person-picture" src="/images/peoplePlaceholders/' + c.name + '.jpg">';
+    cardDiv.find('[id="person_picture"]')[0].innerHTML = '<img class="person-picture" src="' + c.picture + '">';
 }
 
 function loadMsgCards(cId) {

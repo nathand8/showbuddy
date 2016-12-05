@@ -40,3 +40,7 @@ button, #login {
 .container {
     padding: 16px;
 }
+
+img.logo {
+    width: 100px;
+}
