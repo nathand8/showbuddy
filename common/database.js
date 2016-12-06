@@ -42,7 +42,10 @@ function dao_getTestUser(cb) {
 function dao_setUserByUsername(uname, uobject) {
     var db = firebase.database();
     var users = db.ref("users/");
-    users.push(uobject);
+    var userref = users.child(uname);
+    userref.transaction(function (currData) {
+        return uobject;
+    });
 }
 
 // returns boolean : username is available
