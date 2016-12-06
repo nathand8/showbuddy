@@ -2,7 +2,7 @@ $(document).ready(function() {
 	dao_setup()
 	let userInfo = {}
 	let tagId = 0
-	dao_getUserByUsername("dlee", function (data) {
+	dao_getUserByUsername("TheTestUser", function (data) {
 		userInfo = data
 		console.log(userInfo)
 		$("#displayName").val(userInfo.screenname)
