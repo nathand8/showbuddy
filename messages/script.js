@@ -15,8 +15,8 @@ function init() {
     })
 }
 
-function loadCards() {
-    $.each(test_matches, function(i, c) {
+function loadCards(matches) {
+    $.each(matches, function(i, c) {
         var convoDiv = $(document.createElement('DIV'));
         $('div.convo-cards').append(convoDiv);
         convoDiv.load("/messages/cards/convo_card.html", function() {
