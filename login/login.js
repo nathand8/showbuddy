@@ -24,8 +24,8 @@ function signup() {
 		username: name,
 		password: password
 	}
-		dao_checkUsernameAvailable(name, function(taken) {
-		if (!taken) {
+		dao_checkUsernameAvailable(name, function(available) {
+		if (available) {
 			dao_setUserByUsername(name, user);
 			alert("Welcome to Show Buddy, " + name + "!");
 			setCurrentUser(name);

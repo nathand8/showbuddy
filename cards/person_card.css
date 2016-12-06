@@ -35,9 +35,15 @@ div.person-card img.person-picture {
 
 div.person-card .person-card-action {
     position: absolute;
-    top: calc(50% - 10px);
+    top: calc(50% - 20px);
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.85;
+    border: solid;
+    border-radius: 50px;
+}
+
+div.person-card .person-card-action img {
+    width: 30px;
 }
 
 div.person-card .person-card-action:focus, div.person-card .person-card-action:hover {
@@ -45,11 +51,11 @@ div.person-card .person-card-action:focus, div.person-card .person-card-action:h
 }
 
 div.person-card .person-card-action.right {
-    left: calc(100% - 78px);
+    left: calc(100% - 36px);
 }
 
 div.person-card .person-card-action.left {
-    left: -5px;
+    left: 0px;
 }
 
 div.person-card .person-age {
