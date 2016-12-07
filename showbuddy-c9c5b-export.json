@@ -1,0 +1,101 @@
+{
+  "events" : {
+    "event0" : {
+      "date" : "12/09/2016",
+      "description" : "The rockingest bands around will melt your face off",
+      "picture" : "/images/eventPlaceholders/event0.jpg",
+      "tags" : [ "Rock" ],
+      "time" : "6:00 PM",
+      "title" : "Rocking Concert",
+      "venue" : "The Dark Room"
+    },
+    "event1" : {
+      "date" : "12/10/2016",
+      "description" : "Only #1's from your favorite British bands",
+      "picture" : "/images/eventPlaceholders/event1.jpg",
+      "tags" : [ "Pop" ],
+      "time" : "7:00 PM",
+      "title" : "Top Hits Tour",
+      "venue" : "Bubble Club"
+    },
+    "event2" : {
+      "date" : "12/17/2016",
+      "description" : "The Itchy Saddle's first appearance after getting back together",
+      "picture" : "/images/eventPlaceholders/event2.jpg",
+      "tags" : [ "Country" ],
+      "time" : "7:00 PM",
+      "title" : "Hayride Reunion",
+      "venue" : "Bar & Barn"
+    },
+    "event3" : {
+      "date" : "12/23/2016",
+      "description" : "Be a part of this holiday festival",
+      "picture" : "/images/eventPlaceholders/event3.jpg",
+      "tags" : [ "Rap" ],
+      "time" : "6:00 PM",
+      "title" : "Christmas Bash",
+      "venue" : "Winter Stadium"
+    }
+  },
+  "users" : {
+    "TheTestUser" : {
+      "age" : "25",
+      "buddy_age_max" : "29",
+      "buddy_age_min" : "18",
+      "buddy_gender" : "any",
+      "description" : "I love music and concerts",
+      "event_preferences" : [ "Rock", "Pop" ],
+      "events" : [ "event0", "event1", "event2", "event3" ],
+      "gender" : "male",
+      "group" : true,
+      "individual" : true,
+      "matches" : [ "match0", "match1" ],
+      "password" : "password",
+      "people" : [ "user0", "user1", "user2", "user3" ],
+      "screenname" : "Joe Bob",
+      "username" : "TheTestUser"
+    },
+    "match0" : {
+      "email" : "maria88@gmail.com",
+      "phone" : "801-555-1234",
+      "picture" : "/images/peoplePlaceholders/maria.jpg",
+      "screenname" : "Maria",
+      "username" : "match0"
+    },
+    "match1" : {
+      "email" : "gerald95@yahoo.com",
+      "phone" : "801-555-9876",
+      "picture" : "/images/peoplePlaceholders/gerald.jpg",
+      "screenname" : "Gerald",
+      "username" : "match1"
+    },
+    "user0" : {
+      "age" : 25,
+      "description" : "I go to concerts every weekend. I might have an addiction.",
+      "picture" : "/images/peoplePlaceholders/andrea.jpg",
+      "screenname" : "Andrea",
+      "username" : "user0"
+    },
+    "user1" : {
+      "age" : 21,
+      "description" : "I play in a local band, so I love supporting my fellow musicians.",
+      "picture" : "/images/peoplePlaceholders/jane.jpg",
+      "screenname" : "Jane",
+      "username" : "user1"
+    },
+    "user2" : {
+      "age" : 19,
+      "description" : "Music is my life. I like all genres, but especially Grubstep.",
+      "picture" : "/images/peoplePlaceholders/jimothy.jpg",
+      "screenname" : "Jimothy",
+      "username" : "user2"
+    },
+    "user3" : {
+      "age" : 26,
+      "description" : "My favorite band is Quichekabob. One time, their singer gave me half of his grilled cheese sandwich.",
+      "picture" : "/images/peoplePlaceholders/rosstopher.jpg",
+      "screenname" : "Rosstopher",
+      "username" : "user3"
+    }
+  }
+}
